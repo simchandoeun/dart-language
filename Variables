@@ -1,0 +1,37 @@
+1 Type Syntax
+ Dart uses the var keyword to achieve the same. 
+ Example
+   var name = 'Smith';
+  void main() { 
+    String name = 1; 
+  }
+  2.The dynamic keyword
+   Variables declared without a static type are implicitly declared as dynamic.
+   Example
+   void main() { 
+    dynamic x = "tom"; 
+    print(x);  
+    }
+ 3.Final and Const
+  The final and const keyword are used to declare constants. 
+ 3.1 Syntax: final Keyword
+   final variable_name
+    OR
+   final data_type  variable_name
+   Example
+   void main() { 
+   final val1 = 12; 
+   print(val1); 
+ }
+3.2 Syntax: const Keyword
+const variable_name
+OR
+const data_type variable_name
+ Example:
+   void main() { 
+   const pi = 3.14; 
+   const area = pi*12*12; 
+   print("The output is ${area}"); 
+  }
+  
+
