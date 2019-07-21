@@ -1,0 +1,43 @@
+import 'package:classstudent/classstudent.dart' as classstudent;
+import 'student.dart';
+import 'dart:io';
+main(List<String> arguments) {
+  operationexecut();
+}
+operationexecut(){
+  int c;
+  List<student> ls=new List<student>();
+  student s=new student();;
+  while(c!=3){
+    print("1.Add  new student");
+    print("2.Display  student");
+    print("3.Exit");
+    stdout.write("What  do  you want?");
+    c=int.parse(stdin.readLineSync());
+    switch(c){
+      case 1:{
+        for(var i=0;i<5;i++) {
+          stdout.write("Add ID:");
+          s.setid(stdin.readLineSync());
+          stdout.write("Add Name:");
+          s.setname(stdin.readLineSync());
+          stdout.write("Add Gender:");
+          s.setgender(stdin.readLineSync());
+          stdout.write("Add Address:");
+          s.setadd(stdin.readLineSync());
+          ls.add(s);
+        }
+      }
+      break;
+      case 2:{
+        print(s.Bodyheader());
+        for(student ss in ls){
+          print(ss.getString());
+          print(ss.showheader());
+
+        }
+      }
+      break;
+    }
+  }
+}
