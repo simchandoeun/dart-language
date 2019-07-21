@@ -1,0 +1,23 @@
+import 'package:projectstatement/projectstatement.dart' as projectstatement;
+import 'dart:io';
+main(List<String> arguments) {
+    var stu=new student();
+        stu.setid(100);
+        stu.setname("NBC");
+        stu.setsex("M");
+        print(stu.displaystudent());
+}
+class student{
+      int id;
+      String name;
+      String sex;
+      setid(int a){id=a;}
+     int  getid(){return id;}
+      setname(String n){name=n;}
+      String getname(){return name;}
+      setsex(String s){sex=s;}
+     String getsex(){return sex;}
+      String  displaystudent(){
+        return "id:$id|Name->$name|Sex->$sex";
+      }
+}
