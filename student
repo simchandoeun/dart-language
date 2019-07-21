@@ -1,0 +1,43 @@
+class student{
+ String id;
+  String  name;
+  String add;
+  String gender;
+  setid(String  i){
+    id=i;
+  }
+  String getid(){
+    return  id;
+  }
+  setname(String  n){
+    name=n;
+  }
+  String getname(){
+    return name;
+  }
+  setadd(String  ad){
+    add=ad;
+  }
+  getadd(){
+    return add;
+  }
+  setgender(String g){
+    gender=g;
+  }
+  getgender(){
+    return gender;
+  }
+  String getString(){
+    return"|$id|$name|$gender|$add";
+  }
+  String showheader(){
+    return"---------------------------------";
+  }
+  String Bodyheader(){
+    String sms="";
+    sms+=""+showheader()+"\n";
+    sms+="| ID |  Name  | Gender  | Address |"+"\n";
+    sms+=""+showheader()+"";
+    return sms;
+  }
+}
