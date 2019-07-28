@@ -1,0 +1,112 @@
+import 'package:constructordart/constructordart.dart' as constructordart;
+
+import'dart:io';
+
+import 'package:constructordart/student.dart';
+import 'package:constructordart/teacher.dart';
+
+main(List<String> arguments) {
+    operationconstructor();
+}
+ operationconstructor(){
+    int c;
+    c=0;
+    while(c!=3){
+        print("1.Student");
+        print("2.Teacher");
+        print("3.Exit");
+        stdout.write("what do you want?");
+        c=int.parse(stdin.readLineSync());
+        switch(c){
+            case 1:{
+                String id;
+                String sname;
+                String sub;
+                List<student> sl=new List<student>();
+                for(var i=0;i<2;i++){
+                  stdout.write("Input ID:");
+                   id=stdin.readLineSync();
+                   stdout.write("Input Name:");
+                   sname=stdin.readLineSync();
+                   stdout.write("Input Subject:");
+                   sub=stdin.readLineSync();
+                   student s=new student(id,sname,sub);
+                   sl.add(s);
+                }
+              for(student s  in sl){
+                print("${s.getid()}");
+              }
+            }break;
+            case  2:{
+              String id;
+              String sname;
+              String sub;
+              List<teacher> sl=new List<teacher>();
+              for(var i=0;i<2;i++){
+                stdout.write("Input ID:");
+                id=stdin.readLineSync();
+                stdout.write("Input Name:");
+                sname=stdin.readLineSync();
+                stdout.write("Input Subject:");
+                sub=stdin.readLineSync();
+                teacher s=new teacher(id,sname,sub);
+                sl.add(s);
+              }
+                header();
+              for(teacher s  in sl){
+                print(s.toString());
+                footer();
+              }
+            }break;
+        }
+    }
+}
+void footer(){
+  print("------------------------");
+}
+void header(){
+  footer();
+  print("|ID|Name|Subject|");
+  footer();
+}
+class  teacher{
+  String id;
+  String sname;
+  String sub;
+  setid(String i){
+    id=i;
+  }
+  String getid(){return id;}
+  setname(String  na){sname=na;}
+  String getname(){return sname;}
+  setsub(String s){sub=s;}
+  getsub(){return  sub;}
+  teacher(String i,String sn,String su){
+    id=i;
+    sname=sn;
+    sub=su;
+  }
+  String toString(){
+    return "|"+id+"|"+sname+"|"+sub+"|";
+  }
+}
+
+
+class student{
+  String id;
+  String sname;
+  String sub;
+  setid(String i){
+    id=i;
+  }
+  String getid(){return id;}
+  setname(String  na){sname=na;}
+  String getname(){return sname;}
+  setsub(String s){sub=s;}
+  getsub(){return  sub;}
+  student(String i,String sn,String su){
+    id=i;
+    sname=sn;
+    sub=su;
+  }
+}
