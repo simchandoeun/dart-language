@@ -1,0 +1,57 @@
+import 'package:abstractclass/abstractclass.dart' as abstractclass;
+
+import 'person.dart';
+import 'student.dart';
+import 'teacher.dart';
+
+main(List<String> arguments) {
+  print('Hello world: ${abstractclass.calculate()}!');
+  //can not create object because  it is abstract class
+  //person p=new person("ss","ss","ssss");
+  student s=new student("11","sss","ssss");
+  print("V:${s.getsname()}");
+  print(s.toString());
+  teacher t=new teacher("22","2232","33","ss");
+  print(s.toString());
+}
+
+import 'person.dart';
+
+class student  extends person{
+student(String id,String  sname,String sub):super(id,sname,sub);
+@override
+ String toString(){
+  return "ID:"+id+"Name:"+sname+"Sub:"+sub;
+}
+}
+import 'person.dart';
+
+class teacher extends person{
+   String re;
+  teacher(String id,String  name,String sub,String re):super(id,name,sub){
+    this.re=re;
+  }
+  @override
+  String toString(){
+    return "ID:"+id+"Name:"+sname+"Sub:"+sub;
+  }
+}
+abstract  class  person{
+  String id;
+  String  sname;
+  String sub;
+  person(String id,String  name,String sub){
+    this.id=id;
+    this.sname=name;
+    this.sub=sub;
+  }
+  setid(String id){
+    this.id=id;
+  }
+  String  getid(){return this.id;}
+  setssname(String sn){this.sname=sn;}
+  String getsname(){return this.sname;}
+  setsub(String su){this.sub=su;}
+  String getsub(){return this.sub;}
+  String  toString();
+}
